@@ -1,0 +1,8 @@
+
+
+<template name="count-down">
+    <text style="font-size:12px; color:#757575;">
+        <!--{{start_time > end_time ? "woligecha" : "shenmwanyier"}}-->
+        还有{{status}}
+    </text>
+</template>

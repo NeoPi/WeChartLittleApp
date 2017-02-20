@@ -1,0 +1,18 @@
+
+.mapstyle {
+    z-index:0;  
+}
+
+.footer {
+    display: flex;
+    flex-direction: row; 
+	justify-content: space-around;
+    background: orangered;
+    z-index:1;
+}
+
+.login_style {
+    position: fixed;
+    width:50%;
+    bottom: 60rpx
+}

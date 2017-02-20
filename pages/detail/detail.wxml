@@ -1,0 +1,42 @@
+<view>
+<scroll-view style="width:100%;background-color:#e0e0e0;">
+    <swiper indicator-dots="{{dots}}" autoplay="{{autoPlay}}" interval="{{interval}}" duration="{{duration}}" style=" width:100%;" >
+        <block wx:for-items="{{imageurls}}" width="100%">
+            <swiper-item width="100%">
+                <image src="{{item}}" class="image" mode="aspectFill"/>
+            </swiper-item>
+        </block>
+    </swiper>
+
+    <view class="row-container">
+        <text style="color:#ffb30c; font-size:12px;margin-left:10px">试用15件</text>
+        <text style="color:#49bbf8; font-size:12px">售价199.00元</text>
+        <text style="color:#ed5f70; font-size:12px;margin-right:10px">999人申请</text>
+    </view>
+
+    <view class="level-container">
+        <text style="color:#757575; font-size:14px;margin-left:10px">选择档位</text>
+        <text style="color:#757575; font-size:14px;margin-right:10px">剩余5天</text>
+    </view>
+    <view class="level-content">
+        <text style="color:#757575; font-size:12px;margin-left:10px">0.01元</text>
+        <text style="color:#757575; font-size:14px;">首发试用</text>
+        <text style="color:#757575; font-size:14px;margin-right:10px">879人参与</text>
+    </view>
+
+    <view class="overview">
+        <text style="color:#49bbf8; background-color:#e8e8e8;font-size:14px;width:100% ;padding-top:10px;padding-bottom:10px;text-align:center;" >概述</text>
+        <block wx:for-items="{{goodsdetail}}" style="width:100%">
+            <image src="{{item}}" mode="scaleToFill" class="image-overview"/>
+        </block>
+    </view>
+
+
+</scroll-view>
+</view>
+
+<view class="footer">
+    <button class="bottom" bindtap="wxPay" >
+        报名
+    </button>
+</view>

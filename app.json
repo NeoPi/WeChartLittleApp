@@ -1,0 +1,20 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/hello/hello",
+    "pages/pull-down-refresh/pull-down-refresh",
+    "pages/count/count",
+    "pages/swiper/index",
+    "pages/detail/detail",
+    "pages/location/location",
+    "pages/login/login"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#24292F",
+    "navigationBarTitleText": "香蕉导游",
+    "navigationBarTextStyle":"white",
+    "backgroundColor": "#eeeeee"
+  }
+}

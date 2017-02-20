@@ -1,0 +1,71 @@
+<!-- hello.wxml-->
+
+
+<import src="../common/count.wxml" />
+
+<view calss="container">
+    <!-- Thie is our View -->
+    <loading hidden="{{loding_hidden}}" bindchange="loadingchange">
+        加载中...
+    </loading>
+
+    <modal title="警告" confirm_text="confirm" no-cancel hidden="{{hideModalWithOk}}" bindconfirm="clickOkModal">
+        <view>T_T ! U Clicked M!! </view>
+    </modal>
+
+    <toast hidden="{{toastHidden}}" duration="2000" bindchange="bindChange" >
+        {{item.id}}
+    </toast>
+
+    <scroll-view class="scroll-view"> 
+        <view wx:for="{{surveyList}}" wx:key="idx" wx:for-index="idx" wx:for-item="item" class="list-item-container" bindtap="itemclick">
+            <view >
+                <image style="width:100%;height:240rpx" src="{{item.img_url}}" />
+                <text style="background-color:#ff6709;padding:5px;font-size:12px;color:#ffffff">进行中</text>
+            </view>
+            <view style="font-size:16px;margin-top:16px">
+                {{item.title}}
+            </view>
+            <view style="font-size:12px;color:#757575;margin-top:12px">
+                {{item.desc}}
+            </view>
+
+            <!-- 众测 -->
+            <view wx:if="{{item.type == 1}}" style="border-radius: 50%;margin-top:12px">
+                <progress percent="{{item.progressbar}}" show-info="{{true}}" color=" #ff6709" strokeWidth="4" />
+            </view>
+
+            <view style="color:#ff6709;margin-top:16px;font-family:myFirstFont">
+                {{item.price}}元
+            </view> 
+
+            <view wx:if="{{item.type == 1}}" class="row-layout" >
+                <view class="text-gray">已筹{{item.total_amount}}</view>
+                
+                <!--<view class="text-gray">剩余xx天</view>-->
+                <template is="count-down" data="{{start_time:item.start_time,end_time:item.end_time}}"/>
+                <view class="text-gray">{{item.total_member}}人支持</view>
+            </view>
+            
+            <!--试用-->
+            <view wx:if="{{item.type == 2}}" class="row-layout" >
+                <view class="text-gray">试用{{item.tryout_num}}件</view>
+                
+                <!--<view class="text-gray">剩余xx天</view>-->
+                <template is="count-down" data="{{start_time:item.start_time,end_time:item.end_time,format_time:format_time}}"/>
+                <view class="text-gray">{{item.total_member}}人申请</view>
+            </view>
+            
+            <view style="background-color:#e8e8e8;width:100%; height:2rpx ;margin-top:16px" />
+        </view>
+
+        <view wx:if="{{page < total_page}}" style="width:100%;height:80rpx;background-color:#00ff00;display:flex;align-items:center;vertical-align:middle" bindtap="loadMore">
+            <text style="width:100%;height:auto;text-align:center;padding-bottom:20rpx; background-color:#ff0000; color:#ff6709;font-size:16px;margin-left: auto;margin-right: auto;"  >
+                更多活动
+            </text>
+            <view />
+        </view>
+    </scroll-view>
+    <view style="background-color:#e8e8e8;width:100%; height:8px ; " />
+
+</view>

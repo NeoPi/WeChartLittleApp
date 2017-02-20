@@ -1,0 +1,28 @@
+<!--index.wxml-->
+<view class="container">
+  <view  bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+
+  <view bindtap="pullDownRefresh" class="user-motto">
+    <text class="user-motto" > pull-down-refresh </text>
+  </view>
+
+  <view bindtap="countDown" class="user-motto">
+    <text class="user-motto" > 倒计时 </text>
+  </view>
+
+  <view bindtap="location" class="user-motto">
+    <text> 定位</text>
+  </view>
+
+  <view bindtap="swiper" class="user-motto">
+    <text class="user-motto" > 侧滑 </text>
+  </view>
+
+  <view bindtap="hello" class="usermotto">
+    <text>Hello {{userInfo.nickName}}</text>
+  </view>
+
+</view>

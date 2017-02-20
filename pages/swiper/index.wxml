@@ -1,0 +1,13 @@
+<view class="page">
+
+    <view class="pageFirst {{pageFirstHover?'pageFirstHover':''}}" bindtap='bindClass'>
+        <view class="content">侧滑上面页</view>
+        
+    </view>
+    <view class="pageSecond" bindtap='bindClass'>
+
+        侧滑下面页
+    </view>
+
+</view>
+
