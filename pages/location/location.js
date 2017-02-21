@@ -7,7 +7,20 @@ Page({
       mapHeight:1920,
 
 
-    controls: [{
+    controls: [
+      {
+      id: 0,
+      iconPath: '/pages/resources/abc_btn_radio_to_on_mtrl_015.png',
+      position: {
+        left: 40,
+        top: 400,
+        width: 60,
+        height: 60
+      },
+      clickable: true
+    },
+      
+      {
       id: 1,
       iconPath: '/pages/resources/location.png',
       position: {
@@ -17,7 +30,21 @@ Page({
         height: 80
       },
       clickable: true
-    }]
+    },
+
+    {
+      id: 2,
+      iconPath: '/pages/resources/abc_ic_menu_copy_mtrl_am_alpha.png',
+      position: {
+        left: 300,
+        top: 400,
+        width: 60,
+        height: 60
+      },
+      clickable: true
+    },
+    
+    ]
   },
   regionchange(e) {
     console.log(e.type)
@@ -40,7 +67,15 @@ Page({
           // complete
         }
       })
+    } else if (e.controlId == 0){
+      this.moveToLocation();
     }
+  },
+
+  onReady : function(e) {
+    // 使用 wx.createMapContext 获取 map 上下文 
+    this.mapCtx = wx.createMapContext('map')
+
   },
   onLoad: function () {
     console.log('location onLoad')
@@ -56,7 +91,6 @@ Page({
     wx.getLocation({
         type: 'wgs84',
         success: function(res) {
-
           console.log(res.latitude+",,,,"+res.longitude)
             that.setData({
                 latitude :res.latitude,
@@ -69,6 +103,11 @@ Page({
 
   signin : function(){
     console.log("signin++++++");
+  },
+
+  // 移动定位位置
+  moveToLocation: function () {
+    this.mapCtx.moveToLocation()
   }
 
 })

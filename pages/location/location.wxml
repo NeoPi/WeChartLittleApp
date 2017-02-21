@@ -13,5 +13,5 @@
 
 
 <view class="footer">
-    <button bindtap="signin" type="primary" class="login_style">登录 / 注册</button>
+    <button bindtap="moveToLocation" type="primary" class="login_style">登录 / 注册</button>
 </view>
