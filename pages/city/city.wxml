@@ -1,0 +1,17 @@
+
+<scroll-view style="width:100%;height:100%" >  
+    <view class="row_style">
+        <text > 您的位置 </text>
+        <text class="list_item"> {{province}} </text>
+    </view>
+    
+    <view class="list_item" wx:for="{{provinces}}" wx:key="itemIndex" wx:for-index="itemIndex" 
+        wx:for-item="itemName" data-index="{{itemIndex}}" bindtap="listItemClick" >
+        <text style="width:100%"> {{itemName}} </text>
+    </view>
+
+
+
+
+</scroll-view>
+

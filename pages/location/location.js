@@ -12,10 +12,10 @@ Page({
       id: 0,
       iconPath: '/pages/resources/abc_btn_radio_to_on_mtrl_015.png',
       position: {
-        left: 40,
-        top: 400,
-        width: 60,
-        height: 60
+        left: 35,
+        top: 520,
+        width: 50,
+        height: 50
       },
       clickable: true
     },
@@ -24,8 +24,8 @@ Page({
       id: 1,
       iconPath: '/pages/resources/location.png',
       position: {
-        left: 80,
-        top: 400,
+        left: 90,
+        top: 500,
         width: 200,
         height: 80
       },
@@ -36,10 +36,10 @@ Page({
       id: 2,
       iconPath: '/pages/resources/abc_ic_menu_copy_mtrl_am_alpha.png',
       position: {
-        left: 300,
-        top: 400,
-        width: 60,
-        height: 60
+        left: 305,
+        top: 520,
+        width: 40,
+        height: 40
       },
       clickable: true
     },
@@ -69,6 +69,19 @@ Page({
       })
     } else if (e.controlId == 0){
       this.moveToLocation();
+    } else if (e.controlId == 2) {
+      wx.navigateTo({
+        url: '../city/city',
+        success: function(res){
+          // success
+        },
+        fail: function() {
+          // fail
+        },
+        complete: function() {
+          // complete
+        }
+      })
     }
   },
 

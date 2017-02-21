@@ -1,25 +1,18 @@
 
-<view class="base">
-
-<view class="input">
+<form class="base" bindsubmit="login">
+    <view class="input">
     <view class="row_style">
         <text  class="text-lable">手机号码</text>
-
-        <input class="input-style" placeholder="请输入手机号码" type="number" maxlength="11" bindinput="phone_input"/>
-
-        <text class="request_code_style" disabled="{{request_code}}" bindtap="request_phonecode" style="color:{{request_code_color}}"> 获取验证码 </text>
+        <input class="input-style" name="phonenum" placeholder="请输入手机号码" type="number" maxlength="11"                                    bindinput="phone_input"/>
+        <text class="request_code_style" disabled="{{request_code}}" bindtap="request_phonecode" 
+                style="color:{{request_code_color}}"> 获取验证码 </text>
     </view>
-
-    <view style="width:100%;height:2rpx;background:gray">
-    </view>
+    <view style="width:100%;height:2rpx;background:gray"></view>
     <view class="row_style">
         <text class="text-lable">验证码</text>
-
-        <input class="input-style" placeholder="请输入验证码" type="number" maxlength="6" bindinput="code_input"/>
+        <input class="input-style" name="phonecode" placeholder="请输入验证码" type="number" maxlength="6"
+                 bindinput="code_input"/>
     </view>
-
-</view>
-
-<button bindtap="login" type="primary" class="login_button" disabled="{{login_disable}}"> 登录 </button>
-
-</view>
+    </view>
+    <button form-type="submit" type="primary" class="login_button" disabled="{{login_disable}}"> 登录 </button>
+</form>

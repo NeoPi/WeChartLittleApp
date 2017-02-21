@@ -1,0 +1,19 @@
+
+
+.row_style {
+    margin-top: 30rpx;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 200rpx
+}
+
+.list_item {
+    padding-top: 30rpx;
+    padding-bottom: 30rpx;
+    padding-left: 20rpx;
+    background: yellow ;
+    text-align: left;
+
+
+}
